@@ -1,6 +1,6 @@
 import { WeatherAdapterInterface } from "@/api/weather/types";
 import { FC } from "react";
-import { WindDirection } from "./WindDirection";
+import { WindDirection } from "../component/WindDirection";
 import { getRainyType } from "../utils";
 
 interface Props {
@@ -16,7 +16,7 @@ const LiveSection: FC<Props> = (props) => {
     <section>
       <div>
         <div>
-          <strong>{live.T1H?.obsrValue}</strong>
+          <strong>{live.T1H?.obsrValue}°C</strong>
           <strong>{getRainyType(live.PTY?.obsrValue)}</strong>
         </div>
         <div>
@@ -24,13 +24,13 @@ const LiveSection: FC<Props> = (props) => {
           <dl>
             <dt>최저</dt>
             <dd>
-              <strong>{today_temperature.min}</strong>
+              <strong>{today_temperature.min}°C</strong>
             </dd>
           </dl>
           <dl>
             <dt>최고</dt>
             <dd>
-              <strong>{today_temperature.max}</strong>
+              <strong>{today_temperature.max}°C</strong>
             </dd>
           </dl>
           <span>(오전 6시, 오후 3시)</span>
@@ -39,11 +39,11 @@ const LiveSection: FC<Props> = (props) => {
       <div>
         <dl>
           <dt>강수량</dt>
-          <dd>{live.RN1?.obsrValue}</dd>
+          <dd>{live.RN1?.obsrValue}mm</dd>
         </dl>
         <dl>
           <dt>습도</dt>
-          <dd>{live.REH?.obsrValue}</dd>
+          <dd>{live.REH?.obsrValue}%</dd>
         </dl>
         <dl>
           <dt>풍향</dt>
@@ -54,7 +54,7 @@ const LiveSection: FC<Props> = (props) => {
         </dl>
         <dl>
           <dt>풍속</dt>
-          <dd>{live.WSD?.obsrValue}</dd>
+          <dd>{live.WSD?.obsrValue}(m/s)</dd>
         </dl>
       </div>
     </section>

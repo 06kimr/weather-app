@@ -27,7 +27,7 @@ const WeatherMain: FC<Props> = (props) => {
       <LiveSection live={live} today_temperature={today_temperature} />
 
       {/* forecast 영역 */}
-      <ForecastSection merged_forecast={merged_forecast} />
+      <ForecastSection forecast_list={merged_forecast} />
       <section></section>
     </main>
   );

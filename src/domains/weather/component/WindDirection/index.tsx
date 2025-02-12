@@ -8,8 +8,12 @@ const WindDirection: FC<Props> = (props) => {
   const { direction } = props;
 
   return (
-    <div role="presentation" aria-label={`${direction}deg`}>
-      <span>⬆</span>
+    <div
+      role="presentation"
+      aria-label={`${direction}deg`}
+      style={{ rotate: `${direction - 90}deg`, width: "fit-content" }}
+    >
+      <span style={{fontSize: "14px"}}>➤</span>
     </div>
   );
 };
